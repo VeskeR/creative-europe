@@ -10,11 +10,12 @@ $nav-left: $wrapper-margin;
 $white: #ffffff;
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
-$light-grey: #95a5a6;
+$light-grey: #e2e2e2;
 $grey: #7f8c8d;
 $red: #e74c3c;
+$bleed-blue: #eef3ff;
 $light-blue: #3498db;
-$dark-blue: #2e8ece;
+$dark-blue: #004494;
 
 * {
   padding: 0;
@@ -40,7 +41,7 @@ body {
   // position: relative;
 
   .header {
-    background-color: $dark-blue;
+    background-color: $light-blue;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -59,7 +60,7 @@ body {
   }
 
   .nav {
-    background-color: $dark-blue;
+    background-color: $light-blue;
     position: fixed;
     left: $nav-left;
     top: $header-height;
@@ -154,12 +155,105 @@ body {
 
       &__container {
         padding: 1rem 0;
+
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+        }
+        h3 {
+          font-size: 1.6rem;
+        }
+        h4 {
+          font-size: 1.4rem;
+        }
+        h5 {
+          font-size: 1.2rem;
+        }
+        h6 {
+          font-size: 1rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          color: $dark-blue;
+          margin-bottom: .5rem;
+        }
+
+        p, span, li, div, ul {
+          font-size: .8rem;
+        }
+
+        p {
+          margin: 1rem 0;
+        }
+
+        .mark {
+          display: block;
+          background-color: $light-grey;
+        }
+
+        ul {
+          padding: 1rem;
+          list-style: disc;
+
+          &.no-padding {
+            padding: 0;
+          }
+
+          .caption {
+            font-style: italic;
+
+            &--blue {
+              color: $light-blue;
+            }
+          }
+
+          li {
+            margin-left: 1rem;
+          }
+        }
+
+        a {
+          color: $light-blue;
+
+          &:visited {
+            color: $dark-blue;
+          }
+
+          &:hover {
+            color: $silver;
+          }
+        }
+        .table {
+          background-color: $bleed-blue;
+          padding: 1rem;
+
+          table {
+            border: 0;
+            border-collapse: collapse;
+
+
+            thead {
+              color: $dark-blue;
+              font-style: italic;
+            }
+
+            tbody {
+
+            }
+
+            tfoot {
+              font-style: italic;
+            }
+          }
+        }
       }
     }
   }
 
   .footer {
-    background-color: $dark-blue;
+    background-color: $light-blue;
     position: fixed;
     bottom: 0;
     width: 100%;
