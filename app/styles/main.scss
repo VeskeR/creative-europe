@@ -4,7 +4,7 @@
 $wrapper-margin: 5%;
 $header-height: 80px;
 $footer-height: 60px;
-$nav-width: 200px;
+$nav-width: 300px;
 $nav-left: $wrapper-margin;
 
 $white: #ffffff;
@@ -41,14 +41,20 @@ body {
 
   .header {
     background-color: $dark-blue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
     height: $header-height;
+    z-index: 999;
 
     &--text {
+      color: $clouds;
       font-size: 2.5rem;
       line-height: 2.5rem;
+      margin-left: 3rem;
     }
   }
 
@@ -60,6 +66,7 @@ body {
     bottom: $footer-height;
     width: $nav-width;
     margin: 1rem 0;
+    z-index: 999;
 
     .list {
       color: $silver;
@@ -67,7 +74,7 @@ body {
       list-style: none;
 
       &--item {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         line-height: 3rem;
 
         &:hover {
@@ -75,7 +82,7 @@ body {
           cursor: pointer;
         }
 
-        &-selected {
+        &.selected {
           color: $clouds;
         }
       }
@@ -86,7 +93,7 @@ body {
     margin-top: $header-height;
     margin-right: $wrapper-margin;
     margin-bottom: $footer-height;
-    margin-left: calc(5% + 200px);
+    margin-left: calc(5% + 300px);
 
     .content {
       padding: 1rem 1rem 1rem 2rem;
@@ -95,6 +102,7 @@ body {
         display: flex;
         align-items: center;
         height: 2rem;
+        user-select: none;
 
         &--top {
           justify-content: flex-start;
@@ -106,8 +114,13 @@ body {
 
         .icon {
           height: 100%;
-          width: 1rem;
+          width: 2rem;
           position: relative;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $clouds;
+          }
 
           &--left {
 
@@ -115,6 +128,11 @@ body {
 
           &--right {
 
+          }
+
+          &.disabled {
+            opacity: 0;
+            pointer-events: none;
           }
 
           img {
@@ -135,7 +153,7 @@ body {
       }
 
       &__container {
-
+        padding: 1rem 0;
       }
     }
   }
@@ -146,5 +164,14 @@ body {
     bottom: 0;
     width: 100%;
     height: $footer-height;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &--text {
+      color: $clouds;
+      margin-right: 2rem;
+    }
   }
 }
