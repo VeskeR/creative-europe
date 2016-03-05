@@ -10,10 +10,10 @@ $nav-left: $wrapper-margin;
 $white: #ffffff;
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
-$light-grey: #e2e2e2;
+$light-grey: #eff1ec;
 $grey: #7f8c8d;
 $red: #e74c3c;
-$bleed-blue: #eef3ff;
+$bleed-blue: #eafbfb;
 $light-blue: #3498db;
 $dark-blue: #004494;
 
@@ -26,19 +26,17 @@ body {
   background: #fafafa;
 
   font-family: 'Roboto Slab', serif;
-  // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 14px;
 }
 
 .wrapper {
-  // background-position: center center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-image: url(../images/background.jpg);
-  // height: 100%;
-  // width: 100%;
-  // position: relative;
+  &__image {
+    z-index: -999;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   .header {
     background-color: $light-blue;
@@ -193,6 +191,30 @@ body {
           background-color: $light-grey;
         }
 
+        .padding {
+          padding: 1rem;
+
+          &--ver {
+            padding: 1rem 0;
+          }
+
+          &--hor {
+            padding: 0 1rem;
+          }
+        }
+
+        .margin {
+          margin: 1rem;
+
+          &--ver {
+            margin: 1rem 0;
+          }
+
+          &--hor {
+            margin: 0 1rem;
+          }
+        }
+
         ul {
           padding: 1rem;
           list-style: disc;
@@ -211,6 +233,10 @@ body {
 
           li {
             margin-left: 1rem;
+          }
+
+          ul {
+            list-style: circle;
           }
         }
 

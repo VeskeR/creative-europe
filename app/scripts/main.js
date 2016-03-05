@@ -28,7 +28,8 @@ $(document).ready(() => {
   var page = {
     home: 'home',
     about: 'about',
-    culture: 'culture'
+    culture: 'culture',
+    preparation: 'preparation'
   };
 
   function renderContent(pageName, pageNumber) {
