@@ -225,9 +225,11 @@ body {
             color: $silver;
           }
         }
+
         .table {
           background-color: $bleed-blue;
           padding: 1rem;
+          margin: .5rem 0;
 
           table {
             border: 0;

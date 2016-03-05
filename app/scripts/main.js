@@ -46,6 +46,8 @@ $(document).ready(() => {
         pageCount: currentPageCount
       }));
 
+      window.scrollTo(0, 0);
+
       bindNavArrows();
       checkNavArrows();
       checkNavigationMenu();
