@@ -14,7 +14,14 @@ $(document).ready(() => {
       return new Handlebars.SafeString( partial(options.hash) );
   });
 
-  var $content = $('.content');
+  var content = $('.content');
+  var currentPageNumber;
+
+  var page = {
+    home: 'home',
+    about: 'about'
+  };
+  
   var templates = {
     home: [
       'home-1',
@@ -27,11 +34,22 @@ $(document).ready(() => {
     ]
   };
 
-  function renderContent(template) {
-    $content.html(app.templates.content({
-      template: template
-    }));
-  }
+  function renderContent(pageName, pageNumber) {
+    var pageTemplate = templates[pageName];
+    var pageCount = pageTemplate.length;
+    if (pageNumber >= 0 && pageNumber < pageCount) {
+      var template = pageTemplate[pageNumber - 1];
+      content.html(app.templates.content({
+        template: template,
+        currentPage: pageNumber,
+        pageCount: pageCount
+      }));
+    } else {
+      console.log('Wrong page number ' + pageNumber + ' for page ' + pageName);
+    }
+  };
 
-  renderContent(templates.home[0]);
+
+
+  renderContent(page.home, 1);
 });

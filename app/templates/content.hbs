@@ -1,13 +1,9 @@
-<div class="content__navigation">
-  <div class="icon left"></div>
-  <div class="pages"></div>
-  <div class="icon right"></div>
+<div class="content__navigation content__navigation--top">
+  {{ renderPartial 'content-navigation' currentPage=currentPage pageCount=pageCount}}
 </div>
 <div class="content__container">
   {{renderPartial template}}
 </div>
-<div class="content__navigation">
-  <div class="icon left"></div>
-  <div class="pages"></div>
-  <div class="icon right"></div>
+<div class="content__navigation content__navigation--bottom">
+  {{ renderPartial 'content-navigation' currentPage=currentPage pageCount=pageCount}}
 </div>

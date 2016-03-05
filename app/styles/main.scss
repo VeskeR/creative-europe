@@ -7,7 +7,14 @@ $footer-height: 60px;
 $nav-width: 200px;
 $nav-left: $wrapper-margin;
 
+$white: #ffffff;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
+$light-grey: #95a5a6;
+$grey: #7f8c8d;
+$red: #e74c3c;
 $light-blue: #3498db;
+$dark-blue: #2e8ece;
 
 * {
   padding: 0;
@@ -33,21 +40,46 @@ body {
   // position: relative;
 
   .header {
-    background-color: $light-blue;
+    background-color: $dark-blue;
     position: fixed;
     top: 0;
     width: 100%;
     height: $header-height;
+
+    &--text {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
   }
 
   .nav {
-    background-color: $light-blue;
+    background-color: $dark-blue;
     position: fixed;
     left: $nav-left;
     top: $header-height;
     bottom: $footer-height;
     width: $nav-width;
     margin: 1rem 0;
+
+    .list {
+      color: $silver;
+      margin: 1rem;
+      list-style: none;
+
+      &--item {
+        font-size: 1.5rem;
+        line-height: 3rem;
+
+        &:hover {
+          color: $clouds;
+          cursor: pointer;
+        }
+
+        &-selected {
+          color: $clouds;
+        }
+      }
+    }
   }
 
   .main {
@@ -58,11 +90,58 @@ body {
 
     .content {
       padding: 1rem 1rem 1rem 2rem;
+
+      &__navigation {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+
+        &--top {
+          justify-content: flex-start;
+        }
+
+        &--bottom {
+          justify-content: flex-end;
+        }
+
+        .icon {
+          height: 100%;
+          width: 1rem;
+          position: relative;
+
+          &--left {
+
+          }
+
+          &--right {
+
+          }
+
+          img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);;
+          }
+        }
+
+        .pages {
+          display: flex;
+          justify-content: center;
+          width: 5rem;
+          font-size: 1rem;
+          line-height: 2rem;
+        }
+      }
+
+      &__container {
+
+      }
     }
   }
 
   .footer {
-    background-color: $light-blue;
+    background-color: $dark-blue;
     position: fixed;
     bottom: 0;
     width: 100%;
